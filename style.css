@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心电图看图答题</title>
+    <!-- 引入外部样式（可选，提升美观度） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 本地样式文件 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 标题区域 -->
+        <header class="header">
+            <h1><i class="fas fa-heart-pulse"></i> 心电图看图答题</h1>
+        </header>
+
+        <!-- 分数统计 -->
+        <div class="score-card">
+            <span>当前分数：</span>
+            <span class="score-num" id="score">0</span>
+            <span>分</span>
+        </div>
+
+        <!-- 答题卡片 -->
+        <div class="quiz-card">
+            <!-- 题目序号 -->
+            <div class="question-num">第<span id="questionNum">1</span>题</div>
+            
+            <!-- 图片展示区 -->
+            <div class="img-container">
+                <img id="ecgImg" src="" alt="心电图图片" class="ecg-img">
+                <div class="img-placeholder" id="imgPlaceholder">
+                    <i class="fas fa-file-image"></i>
+                    <p>心电图图片占位区</p>
+                    <p class="subtip">替换为实际图片链接即可</p>
+                    <p class="img-title" id="currentQuestionTitle"></p>
+                </div>
+            </div>
+
+            <!-- 题目描述 -->
+            <h2 class="question-title">请判断该心电图对应的心律类型是？</h2>
+
+            <!-- 选项区域 -->
+            <div class="options-container" id="optionsContainer"></div>
+
+            <!-- 答题反馈 -->
+            <div class="feedback" id="feedback"></div>
+        </div>
+
+        <!-- 操作按钮 -->
+        <div class="btn-group">
+            <button id="nextBtn" class="btn next-btn" style="display: none;">
+                <i class="fas fa-arrow-right"></i> 下一题
+            </button>
+            <button id="resetBtn" class="btn reset-btn">
+                <i class="fas fa-redo"></i> 重新答题
+            </button>
+        </div>
+    </div>
+
+    <!-- 引入逻辑文件 -->
+    <script src="script.js"></script>
+</body>
+</html>
